@@ -49,7 +49,8 @@ if __name__ == '__main__':
         
         if action == 'jmp' or action == 'nop':
             # Create a copy of the boot code, so we can make changes without affecting the original
-            boot_code_copy = boot_code
+            # boot_code_copy = boot_code
+            boot_code_copy = boot_code.copy() # Fixed!
 
             if action == 'jmp':
                 boot_code_copy[line] = boot_code_copy[line].replace('jmp', 'nop')
